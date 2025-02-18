@@ -43,7 +43,6 @@ li {
         height: 16.875rem;
     }
 }
-
 .table-major,
 .table-minor,
 .table-major-fluxo {
@@ -178,7 +177,8 @@ li {
     padding-right: 17rem;
 }
 
-.botao {
+.botao,
+.saiba-mais-btn {
     background-color: transparent;
     color: white;
     border-radius: 2rem;
@@ -533,97 +533,6 @@ footer {
     }
 }
 
-.spinner {
-    border: 4px solid white;
-    border-left-color: var(--cor-primaria);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    margin: 20px auto;
-}
-#split-form, 
-#scores-form {
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.card-form{ 
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    input,
-    button {
-        width: 100%;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        font-size: 1em;
-    }
-    input {
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--cor-texto);
-        border: solid 1px white;
-    }
-}
-
-#filtro {
-    width: 20%;
-}
-
-.filter {
-    color: white;
-}
-
-.card-form input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.card-form button,
-#download-link {
-    background: transparent;
-    border: solid 1px white;
-    color: var(--cor-secundaria);
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-    width: fit-content;
-}
-
-.card-form button:hover {
-    background: var(--cor-hover-transparent);
-}
-
-#download-section, 
-#scores-download-section {
-    display: none;
-    margin-top: 20px;
-    text-align: center;
-}
-
-#download-link:hover {
-    background: var(--cor-hover-transparent);
-}
-
-#download-link:hover {
-    background: var(--cor-hover-transparent);
-}
-
-.big {
-    color: white;
-}
-
-.cor-aqua {
-    color: var(--cor-secundaria);
-}
-
 .construcao {
     text-align: center;
     margin-top: 8rem;
@@ -758,6 +667,22 @@ footer {
     text-align: justify;
 }
 
+.mob-fluxo-icon{
+    color:var(--cor-secundaria);
+}
+
+
+img{
+    width:100%; 
+    height:auto;
+}
+
+.image-caption{
+    font-size: 0.8rem;
+    color: white;
+    text-align: center;
+}
+
 @media (min-width: 768px) {
     header nav a {
         display: block;
@@ -783,6 +708,10 @@ footer {
 }
 
 @media (max-width: 767px) {
+
+    .image-captio{
+        font-size: 0.5rem;
+    }
 
     .sidebar {
         top:4rem;
@@ -876,10 +805,6 @@ footer {
         display: flex;
         flex-direction: row;
     }
-
-    /* .conteiner-logo {
-        width: 100%;
-    } */
 
     .table-major-fluxo {
         font-size: 0.5rem;

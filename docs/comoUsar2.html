@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 </head>
+
+
+
 <body class="Rankadmet-body">
     <div class="overlay" id="overlay"></div>
     <div class="main-content">
@@ -19,11 +21,16 @@
                 <a class="conteiner-logo" href="index.html"><h1>RankAdmet</h1></a>
             </div>
         </header>
+
+
+
         <main id="main-content">
               <section id="overview" class="container">
                 <h2 class="h2-first">Como Usar</h2>
                 <p id="Fluxo">O Rankadmet é uma ferramenta de linha de comando, que pode ser usada como biblioteca também, que processa análises ADMET e gera planilhas que ranqueiam moléculas com base em seus scores. Possibilitando uma melhor visualização do resultado ADMET do que às disponíveis atualmente nos sites dessas análises. O programa é composto por módulos, e cada módulo serve para alguma etapa do fluxo de trabalho. Descrito logo abaixo.</p>
-                <div class="card-explicacao">
+                <!-- <div class="card-explicacao"> -->
+
+<!-- 
                     <h3>Fluxo Geral do Rankadmet</h3>
                     <p>O fluxo geral ronda em torno de:</p>
                     <div class="fluxo-grafico">
@@ -43,7 +50,11 @@
                             A planilha de scores é gerada a partir dos CSVs obtidos nas análises ADMET. O programa processa cada molécula, atribui scores e os classifica.  Tanto o SDF ou a planilha com a lista de moléculas gerada pelo programa, podem ser integrados ao processo para adicionar informações complementares.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+
+
+
                 <section class="container main-cards">
                     <a class="card-options" id="cmdCard">
                         <i class="fas fa-code"></i>
@@ -73,19 +84,14 @@
                     </div>
                     <h2>Tutorial Linha de Comando</h2>
                     <p id="Venv">O programa em seu formato de linha de comando possui 3 módulos, padrão, auto e adapt. O módulo Padrão permite controlar cada etapa do fluxo manualmente, o que dá certa flexibilidade no processo. O módulo Automático recebe o caminho de um único ou vários arquivos SDFs, além de receber também o caminho de uma única pasta contendo os arquivos SDF. A partir daí, o programa executa todas as etapas automaticamente. E o módulo Adapt é para converter planilhas de scores geradas em versões anteriores do programa para o formato da versão atual.</p>
-                    <!-- <div class="iframe-class">
-                        <div class="consent-overlay">
-                            <p>Este é um vídeo de tutorial de como usar o programa, ele está armazenado no Youtube, que utiliza cookies para coletar dados analíticos e de rastreamento de anúncios. Para assistir ao vídeo é necessário estar ciente disso e apertar em "Aceitar".</p>
-                            <div class="consent-buttons">
-                                <a href="https://policies.google.com/privacy?hl=pt_BR" target="_blank">Política de Privacidade do Youtube</a>
-                                <button onclick="loadVideo()">Aceitar</button>
-                            </div>
-                        </div>
-                    </div> -->
+
                     <div class="card-explicacao">
                         <h3>Ativando Ambiente Virtual</h3>
-                        <p>É necessário ativar o ambiente virtual sempre que for utilizar o programa, já que, conforme o tutorial de instalação, ele foi instalado em uma venv (ambiente virtual). Você pode estar em qualquer pasta no terminal, basta fornecer o caminho onde a venv está localizada e ativá-la. O método de ativação varia de acordo com o sistema operacional.</p>
-                        <div class="card-explicacao-inner">
+                        <p>É necessário ativar o ambiente virtual sempre que for utilizar o programa. Você pode estar em qualquer pasta no terminal, basta fornecer o caminho onde a venv está localizada e ativá-la. O método de ativação varia de acordo com o sistema operacional.</p>
+
+                        <button class="saiba-mais-btn">Saiba Mais</button><br>
+                        
+                        <div class="card-explicacao-inner" style="display: none;">
                             <h3>Windows</h3>
                             <p>No Windows, o comando para ativar a venv segue a estrutura abaixo:</p>
                             <div class="library">
@@ -93,7 +99,7 @@
                             </div>
                             <p>Basta inserir o caminho da pasta onde a venv está instalada e complementar com venv\Scripts\activate. Esse comando executa o script de ativação da venv, deixando o rankadmet pronto para uso.</p>                       
                         </div>
-                        <div class="card-explicacao-inner">
+                        <div class="card-explicacao-inner" style="display: none;">
                             <h3>Linux</h3>
                             <p>No Linux, o processo é semelhante, mas requer o uso do comando source antes do caminho de ativação. A estrutura do comando é a seguinte:</p>
                             <div class="library">
@@ -102,11 +108,28 @@
                             <p id="Padrao">Aqui, há uma diferença no caminho da ativação, que segue a sequência venv/bin/activate. No exemplo fornecido, a instalação foi feita na pasta /opt, que é comumente utilizada para instalar softwares de terceiros ou aplicativos que não fazem parte da distribuição padrão do sistema. No laboratório, todos os computadores possuem o rankadmet instalado nessa pasta, que pode ser acessada por qualquer usuário.</p>
                         </div>
                     </div>
+                    
+
+
+
+
                     <div class="card-explicacao">
                         <h3>Módulo Padrão</h3>
+                        <div class="card-explicacao-inner">
+                            <h3>Fluxograma</h3>
+                            <img src="assets/manual.png" alt="fluxograma">
+                            <p class="image-caption">Fluxo dos processos do programa: O programa recebe um arquivo SDF, particiona ele em vários arquivos SDF com até 299 moléculas cada, são colocados na pasta "batchs". O usuário deve enviar cada arquivo dessa pasta ao site do ADMETlab para obter os arquivos CSV correspondentes. Após obter todos os CSVs, o usuário deve fornecer esses arquivos como entrada no programa, juntamente com o CSV da pasta "addon" para complementar informações. O programa então processa os dados para gerar a planilha de scores.</p>
+                            <p class="image-caption">As setas indicam a intervenção do usuário, enquanto as linhas representam os processos executados pelo programa.</p>
+                        </div>
+
+
+
+
+
                         <p>Para utilizar um módulo no programa é necessário informar o nome do programa seguido do nome do módulo. Por exemplo: "rankadmet auto -i arquivo.sdf" ou "rankadmet adapt -i arquivo.xlsx". Quando utilizamos apenas o nome do programa seguido dos parâmetros, sem especificar um módulo, estamos chamando o módulo padrão. Por exemplo: "rankadmet -i arquivo.sdf". Este módulo padrão possui três funcionalidades principais:</p>
                         <div class="card-explicacao-inner">
                             <h3>Preparação: Criação de arquivos SDF menores</h3>
+                            
                             <p><strong>-i:</strong> Parâmetro que recebe o caminho de um arquivo SDF ou múltiplos, também pode receber o caminho de uma pasta que contenha os arquivos SDF. Mas caso o parâmetro receber o caminho de uma pasta é necessário colocar junto um outro parâmetro, que é o <strong>-sdf</strong>. Ao fazer uma linha de comando com apenas o -i como parâmetro, a configuração desse processamento se dará com os valores padrões, que são: 299 moléculas em cada arquivo sdf menor, considerando todo o arquivo de entrada sem aplicar filtro de afinidade por docking, e gerando em conjunto aos sdfs menores um arquivo csv auxiliar. Para alterar essa configuração opcional utilize os parâmetros opcionais, que são descritos mais adiante.</p>
                             <h4>Exemplo de Linhas de Comando com Valores Padrões</h4>
                             <div class="fluxo-grafico">
@@ -224,6 +247,14 @@
                     </div>
                     <div class="card-explicacao">
                         <h3>Módulo Auto</h3>
+
+                        <div class="card-explicacao-inner">
+                            <img src="assets/auto.png" alt="fluxograma">
+                            <p class="image-caption">Fluxograma do Módulo Automático</p>
+                        </div>
+
+
+
                         <p>O módulo automático realiza todo o fluxo de trabalho de forma integrada:<br>
                         <strong>-i:</strong> Recebe como entrada 1 ou uma lista de arquivos SDF, esse módulo NÃO ACEITA um caminho de uma pasta. Esse módulo divide os arquivos em partes menores, envia-os automaticamente para o ADMETlab 3.0, baixa os resultados do site e gera a planilha de scores.</p>
                         <h4>Parâmetros opcionais</h4>
@@ -610,6 +641,22 @@
             overlay.classList.remove('active');
             menuBtn.classList.remove('active');
             closeBtn.classList.remove('active');
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.saiba-mais-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const cardInners = button.parentElement.querySelectorAll('.card-explicacao-inner');
+                cardInners.forEach(cardInner => {
+                    if (cardInner.style.display === 'none') {
+                        cardInner.style.display = 'block';
+                        button.textContent = 'Recolher';
+                    } else {
+                        cardInner.style.display = 'none';
+                        button.textContent = 'Saiba Mais';
+                    }
+                });
+            });
         });
     </script>
     <!-- <script>
