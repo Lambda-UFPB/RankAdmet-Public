@@ -219,10 +219,27 @@
                         </div>
                         <div class="card-explicacao">
                             <h3 >Atualizando</h3>
-                            <p>Para atualizar a versão do programa. Vá para a pasta</p>
+                            <p>Para atualizar a versão do programa. Ative a venv</p>
                             <div class="library">
-                                <span class="reservada"> venv/bin/pip</span> install <span class="comentario">--upgrade</span> rankadmet-1.2.0-py3-none-any.whl <span class="comentario">--force-reinstall</span>
-                            </div>                    
+                                <span class="reservada"> source </span> /opt/rankadmet/bin/activate
+                            </div>
+                            <p>Vá até a pasta</p>
+                            <div class="library">
+                                <span class="reservada"> cd </span> /opt/rankadmet/
+                            </div>
+                            <p>Remova outros arquivos .whl que esteja na pasta</p>
+                            <div class="library">
+                                <span class="reservada"> rm </span> *.whl
+                            </div>
+                            <p>Baixe a versão mais atual</p>
+                            <div class="library">
+                                <span class="reservada">sudo</span> npx degit Lambda-UFPB/bin/Rankadmet/release --force
+                            </div>
+                            <p>Instale o rankadmet</p>
+                            <div class="library">
+                                <span class="reservada">pip </span> install <"NOME DO ARQUIVO"> --force-reinstall
+                            </div>
+                            
                         </div>
 
                         <h2>Próximo Passo</h2>
