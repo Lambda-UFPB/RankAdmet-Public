@@ -160,52 +160,66 @@
                         </div>
 
                         <div class="card-explicacao">
-                            <h3>Criando Ambiente Virtual</h3>
-                            <p>A instalação do programa se dará na pasta opt, feita para armazenar programas não essenciais para o sistema. Então abra o terminal, crie uma pasta para o programa:</p>
+                            <h3>Instalando Dependências</h3>
+                            <p>Atualize o gerenciador de pacotes <code>apt</code> com o comando abaixo:</p>
                             <div class="library">
-                                <span class="reservada">sudo</span> mkdir /opt/rankadmet
+                                <span class="reservada">sudo</span> apt update
                             </div>
-                            <P>Mova o arquivo .whl do rankadmet para a pasta, normalmente o arquivo estará em download.</P>
-                            <p>Navegue até a pasta</p>
+                            <p>Em seguida, instale o <code>npx</code>:</p>
+                            <div class="library">
+                                <span class="reservada">sudo</span> apt install npx
+                            </div>
+                        </div>
+                        <div class="card-explicacao">
+                            <h3>Criando venv</h3>
+                            <p>Crie a venv na pasta /opt/:</p>
+                            <div class="library">
+                                <span class="reservada">sudo</span> python3 -m venv /opt/rankadmet
+                            </div>
+                            <p>Em seguida, vá até a pasta;</p>
                             <div class="library">
                                 <span class="reservada">cd</span> /opt/rankadmet
                             </div>
-                            <p>Baixe com o wegt a versão mais atual do programa</p>
+                            <p>Baixe o arquivo executavel do rankadmet</p>
                             <div class="library">
-                                <span class="reservada">wget</span> <'link_do_arquivo_.whl'>
+                                <span class="reservada">sudo</span> npx degit Lambda-UFPB/bin/Rankadmet/release --force
                             </div>
-                            <p>Com o comando abaixo crie a venv</p>
-                            <div class="library">
-                                <span class="reservada">sudo</span> python3 -m venv venv
-                            </div>
-                                 
                         </div>
 
                         <div class="card-explicacao">
-                            <h3>Ativação da Venv</h3>
-                                <p>A ativação da venv requer o uso do comando source antes do caminho de ativação. A venv pode ser ativada de qualquer lugar ao se colocar o caminho de ativação completo:</p>
+                            <h3>Ativação da Venv e Instalação do RankAdmet</h3>
+                                <p>A ative a venv:</p>
                                 <div class="library">
-                                    <span class="reservada">source </span> /opt/rankadmet/venv/bin/activate
+                                    <span class="reservada">source </span> rankadmet/bin/activate
                                 </div>
-                                <p>Todas as vezes que for usar o programa deverá ativar a venv dele</p>
+                                <p>Depois de ativado instale o executavel</p>
+                                <div class="library">
+                                    <span class="reservada">pip </span> install <"NOME DO ARQUIVO">
+                                </div>
                         </div>
-
                         <div class="card-explicacao">
-                            <h3>Instalando o RankAdmet</h3>
-                                <p> Dentro da pasta do Rankadmet, instale o arquivo .whl com o comando abaixo:</p>
+                            <h3>Conferindo instalação</h3>
+                                <p>Necessario sair da pasta onde está</p>
                                 <div class="library">
-                                    <span class="reservada"> venv/bin/pip </span> install .\rankadmet-1.0.0-py3-none-any.whl
+                                    <span class="reservada">cd </span> /home/<"NOME DO USUARIO">/<"PASTA">
                                 </div>
-                                <p>Para garantir que será usado o pip da venv, é interessante que, ao referenciá-lo, seja colocado o caminho completo.</p>
-                                <p>Após a instalação é possivel verificar se deu tudo certo com o comando:</p>
+                                <p>Execute o rankadmet</p>
                                 <div class="library">
-                                    <span class="reservada"> rankadmet </span>
+                                    <span class="reservada">rankadmet</span>
                                 </div>
-                                <p>Agora o programa está pronto para usar.</p>
+                        </div>
+                        
+                        <div class="card-explicacao">
+                            <h3>Executando no dia a dia</h3>
+                                <p> De onde estiver, ative a venv. Quando ativada :</p>
+                                <div class="library">
+                                    <span class="reservada"> source </span> /opt/rankadmet/bin/activate
+                                </div>
+                               <p>O rankadmet estará disponivel em qualquer lugar.</p>
                         </div>
                         <div class="card-explicacao">
                             <h3 >Atualizando</h3>
-                            <p>Para atualizar a versão do programa, basta baixar o arquivo .whl da versão desejada, e colocar o codigo abaixo na pasta onde o rankadmet está instalado com a venv ativada</p>
+                            <p>Para atualizar a versão do programa. Vá para a pasta</p>
                             <div class="library">
                                 <span class="reservada"> venv/bin/pip</span> install <span class="comentario">--upgrade</span> rankadmet-1.2.0-py3-none-any.whl <span class="comentario">--force-reinstall</span>
                             </div>                    
