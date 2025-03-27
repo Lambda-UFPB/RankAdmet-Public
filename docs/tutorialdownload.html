@@ -25,7 +25,7 @@
                     <div class="card-explicacao">
                         <h3>Download</h3>
                             <p>Baixe o arquivo acessando o link de download: <span><a href="https://bit.ly/4jq4QDB" target="_blank">https://bit.ly/4jq4QDB</a></span>. Este link direciona para o GitHub do laboratório onde está o arquivo .whl do programa.</p>
-                            <p>Dentro do repositório navegue até a pasta <code>1.0.0</code>. Encontre o arquivo chamado <code>rankadmet-1.0.0-py3-none-any.whl</code>, clique sobre ele e depois no ícone de download.</p>
+                            <p>Dentro do repositório navegue até a pasta da versão pretendida. Encontre o arquivo chamado de extenção .whl, clique sobre ele e depois no ícone de download.</p>
                             <p>Crie uma pasta dedicada ao programa num local de fácil acesso, e mova o arquivo baixado para esta pasta. Coloque o nome desta pasta de rankadmet.</p>
                     </div>
 
@@ -34,7 +34,7 @@
                             <i class="fa-brands fa-windows"></i>
                             <h3>Windows</h3>
                         </a>
-                        <a class="card-disable">
+                        <a class="card-options" id="libCard">
                             <i class="fa-brands fa-ubuntu"></i>
                             <h3>Ubuntu</h3>
                         </a>
@@ -123,7 +123,7 @@
                             <h3 >Atualizando</h3>
                             <p>Para atualizar, basta colocar o codigo abaixo na pasta onde o rankadmet está instalado com a venv ativada</p>
                             <div class="library">
-                                <span class="reservada"> pip install --upgrade rankadmet-1.2.0-py3-none-any.whl --force-reinstall</span>
+                                <span class="reservada"> pip</span> install <span class="comentario">--upgrade</span> rankadmet-1.2.0-py3-none-any.whl <span class="comentario">--force-reinstall</span>
                             </div>                    
                         </div>
                         <h2>Próximo Passo</h2>
@@ -141,14 +141,6 @@
                         </section>
                     </div>
 
-
-
-
-
-
-
-
-
                     <div id ="lib">
                         <div class="sidebar">
                             <nav class="sidebar-nav">
@@ -165,21 +157,58 @@
                                 </div>
                             </nav>
                         </div>
+
                         <div class="card-explicacao">
-                            <h3>Uso no Dia a Dia</h3>
-                                <p>A ativação da venv requer o uso do comando source antes do caminho de ativação. A estrutura do comando é a seguinte:</p>
+                            <h3>Criando Ambiente Virtual</h3>
+                            <p>A instalação do programa se dará na pasta opt, feita para armazenar programas não essenciais para o sistema. Então abra o terminal, crie uma pasta para o programa:</p>
+                            <div class="library">
+                                <span class="reservada">sudo</span> mkdir /opt/rankadmet
+                            </div>
+                            <P>Mova o arquivo .whl do rankadmet para a pasta, normalmente o arquivo estará em download.</P>
+                            <div class="library">
+                                <span class="reservada">sudo</span> mv /Downloads/rankadmet-1.0.0-py3-none-any.whl  /opt/rankadmet/
+                            </div>
+                            <p>Navegue até a pasta</p>
+                            <div class="library">
+                                <span class="reservada">cd</span> /opt/rankadmet
+                            </div>
+                            <p>Com o comando abaixo crie a venv</p>
+                            <div class="library">
+                                <span class="reservada">sudo</span> python3 -m venv venv
+                            </div>
+                                 
+                        </div>
+
+                        <div class="card-explicacao">
+                            <h3>Ativação da Venv</h3>
+                                <p>A ativação da venv requer o uso do comando source antes do caminho de ativação. A venv pode ser ativada de qualquer lugar ao se colocar o caminho de ativação completo:</p>
                                 <div class="library">
                                     <span class="reservada">source </span> /opt/rankadmet/venv/bin/activate
                                 </div>
-                                <p>O caminho da ativação segue a sequência venv/bin/activate. No exemplo fornecido, a instalação foi feita na pasta /opt, que é comumente utilizada para instalar softwares de terceiros ou aplicativos que não fazem parte da distribuição padrão do sistema. No laboratório, todos os computadores possuem o rankadmet instalado nessa pasta, que pode ser acessada por qualquer usuário.</p>
-                            </div>
+                                <p>Todas as vezes que for usar o programa deverá ativar a venv dele</p>
                         </div>
 
-
-
-
-
-
+                        <div class="card-explicacao">
+                            <h3>Instalando o RankAdmet</h3>
+                                <p> Dentro da pasta do Rankadmet, instale o arquivo .whl com o comando abaixo:</p>
+                                <div class="library">
+                                    <span class="reservada"> venv/bin/pip </span> install .\rankadmet-1.0.0-py3-none-any.whl
+                                </div>
+                                <p>Para garantir que será usado o pip da venv, é interessante que, ao referenciá-lo, seja colocado o caminho completo.</p>
+                                <p>Após a instalação é possivel verificar se deu tudo certo com o comando:</p>
+                                <div class="library">
+                                    <span class="reservada"> rankadmet </span>
+                                </div>
+                                <p>Agora o programa está pronto para usar.</p>
+                        </div>
+                        <div class="card-explicacao">
+                            <h3 >Atualizando</h3>
+                            <p>Para atualizar a versão do programa, basta baixar o arquivo .whl da versão desejada, e colocar o codigo abaixo na pasta onde o rankadmet está instalado com a venv ativada</p>
+                            <div class="library">
+                                <span class="reservada"> venv/bin/pip</span> install <span class="comentario">--upgrade</span> rankadmet-1.2.0-py3-none-any.whl <span class="comentario">--force-reinstall</span>
+                            </div>                    
+                        </div>
+                    </div>
 
 
                         <div id="intro">
@@ -203,7 +232,7 @@
                                 </nav>
 
                             </div>
-                            <h2>Selecione o Sistema <span style="color:#e6db74">(Tutorial Linux Em Breve)</span></h2>
+                            <h2>Selecione o Sistema</h2>
                         </div>
             </section>
         </main>
