@@ -21,6 +21,7 @@
         </header>
         <main id="main-content">
             <section id="overview" class="container">
+                <div id="Download"></div>
                 <h2 class="h2-first">Tutorial de Instalação</h2>
                     <section class="container main-cards">
                         <a class="card-options" id="cmdCard">
@@ -45,11 +46,11 @@
                                 <a href="#CriandoAmbiente"><i class="fas fa-folder-plus"></i>Criando Ambiente Virtual</a>
                                 <a href="#Instalando"><i class="fas fa-download"></i> Instalando</a>
                                 <a href="#DiaaDia"><i class="fas fa-calendar-day"></i> Uso Dia a Dia</a>
-                                <a href="#Passos"><i class="fas fa-step-forward"></i> Próximos Passos</a>
+                                <a href="#Atualizando"><i class="fas fa-calendar-day"></i> Atualizando</a>
                                 </div>
                             </nav>
                         </div>
-                        <div class="iframe-class" id="PowerShell">
+                        <div class="iframe-class" >
                             <div class="consent-overlay">
                                 <p>Este é um vídeo de tutorial de como instalar o programa, ele está armazenado no Youtube, que utiliza cookies para coletar dados analíticos e de rastreamento de anúncios. Para assistir ao vídeo é necessário estar ciente disso e apertar em "Aceitar".</p>
                                 <div class="consent-buttons">
@@ -58,7 +59,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-explicacao">
+                        <div class="card-explicacao" id="PowerShell">
                             <h3>Configurando o PowerShell</h3>
                             <p>Abra o PowerShell como administrador e verifique a versão do Python:</p>
                             <div class="library">
@@ -73,7 +74,7 @@
                                 <span class="reservada">Set-ExecutionPolicy</span> Unrestricted
                             </div>
                             <p>Confirme com <code>A</code> e verifique com:</p>
-                            <div class="library">
+                            <div class="library" id="CriandoAmbiente">
                                 <span class="reservada">Get-ExecutionPolicy</span>
                             </div>
                         </div>
@@ -93,7 +94,7 @@
                             </div>
                             <p>Acesse <a href="https://github.com/Lambda-UFPB/bin/releases" target="_blank">esse repositório </a> no GitHub.  Na seção "release" clique na última versão do RankAdmet, então clique com o botão direito no arquivo <code>.whl</code> e copie o link. Em seguida, use o comando abaixo no terminal para baixar o arquivo:</p>
 
-                            <div class="library">
+                            <div class="library" id="Instalando">
                                 <span class="reservada">Invoke-WebRequest </span> <span class="comentario">-Uri</span> <em>&lt;link copiado&gt;</em> <span class="comentario">-OutFile</span> <em>&lt;Ultimo Caminho do link,ex: rankadmet-2.0.0-py3-none-any.whl &gt;</em>
                             </div>
 
@@ -107,7 +108,7 @@
                             </div>
                             <P>Aguarde até a conclusão da instalação. Ela pode demorar um pouco.</P>
                             <P>Verifique se a instalação foi bem-sucedida executando o comando:</p>
-                            <div class="library">
+                            <div class="library" id="DiaaDia">
                                 <spam class="reservada">rankadmet</spam> <span classe="comentario">--version</span>
                             </div>
                         </div>
@@ -119,7 +120,7 @@
                                 <span class="reservada">&lt;caminho_da_pasta_da_venv&gt;\Scripts\activate</span>
                             </div>
                             <p>Para desativar, use:</p>
-                            <div class="library">
+                            <div class="library" id="Atualizando">
                                 <span class="reservada">deactivate</span>
                             </div>
                         </div>
@@ -166,20 +167,20 @@
                                 <a href="index.html"><i class="fas fa-home"></i> Início</a>
                                 <a href="tutorialdownload.html?section=intro"><i class="fas fa-download"></i> Instalação</a>
                                 <a href="comoUsar.html?section=intro"><i class="fas fa-code"></i> Como Usar</a>
-                                 <div class="sidebar-summary">
-                                <h4>Sumário</h4>
-                                <a href="#Resumos"><i class="fas fa-chart-flow"></i>Resumos</a>
-                                <a href="#Fluxo"><i class="fas fa-chart-flow"></i>Fluxo Geral</a>
-                                <a href="#Padrao"><i class="fas fa-cogs"></i> Módulo Padrão</a>
-                                <a href="#Auto"><i class="fas fa-robot"></i> Módulo Automático</a>
-                                <a href="#Adapt"><i class="fas fa-sync-alt"></i> Módulo Adapt</a>
+                                <div class="sidebar-summary">
+                                    <h4>Sumário</h4>
+                                    <a href="#Download"><i class="fas fa-download"></i> Download</a>
+                                    <a href="#Dependencias"><i class="fas fa-box"></i> Dependências</a>
+                                    <a href="#Ambiente"><i class="fas fa-folder"></i> Ambiente Virtual e Instalação</a>
+                                    <a href="#Diario"><i class="fas fa-calendar-day"></i> Uso Diário</a>
+                                    <a href="#AtualizandoUbuntu"><i class="fas fa-sync"></i> Atualizando</a>
                                 </div>
                             </nav>
                         </div>
-                        <div class="card-explicacao">
+                        <div class="card-explicacao" >
                             <h3>Download do Rankadmet</h3>
                             <p>Acesse <a href="https://github.com/Lambda-UFPB/bin/releases" target="_blank">esse repositório </a> no GitHub.  Na seção "release" clique na última versão do RankAdmet, então clique com o botão direito no arquivo <code>.whl</code> e copie o link. Em seguida, use o comando abaixo no terminal para baixar o arquivo:</p>
-                            <div class="library">
+                            <div class="library" id= "Dependencias">
                                 <span class="reservada">wget</span> <em>&lt;link copiado&gt;</em>
                             </div>
                         </div>
@@ -204,7 +205,7 @@
                                 <span class="reservada">python3</span> <span class="comentario">-m</span> venv <span class="comentario">--help</span>
                             </div>
                             <p>Se não estiver instalado, instale com o comando:</p>
-                            <div class="library">
+                            <div class="library" id="Ambiente">
                                 <span class="reservada">sudo</span> apt install python3-venv
                             </div>
                         </div>
@@ -227,7 +228,7 @@
                                 <span class="reservada">rankadmet </span> <span class="comentario">--version</span>
                             </div>
                             <p>Ou apenas:</p>
-                            <div class="library">
+                            <div class="library" id="Diario">
                                 <span class="reservada">rankadmet </span>
                             </div>
                         </div>
@@ -240,7 +241,7 @@
                                 <span class="reservada">source</span> /opt/rankadmet/bin/activate
                             </div>
                             <p>Quando terminar, desative o ambiente virtual com o comando:</p>
-                            <div class="library">
+                            <div class="library" id="AtualizandoUbuntu">
                                 <span class="reservada">deactivate</span>
                             </div>
                         </div>
