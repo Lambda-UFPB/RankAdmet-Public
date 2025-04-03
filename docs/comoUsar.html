@@ -22,8 +22,8 @@
         <main id="main-content">
               <section id="overview" class="container">
                 <h2 class="h2-first">Como Usar</h2>
-                <p id="Fluxo">O Rankadmet é uma ferramenta de linha de comando, que pode ser usada como biblioteca também, que processa análises ADMET e gera planilhas que ranqueiam moléculas com base em seus scores. Possibilitando uma melhor visualização do resultado ADMET do que às disponíveis atualmente nos sites dessas análises. O programa é composto por módulos, e cada módulo serve para alguma etapa do fluxo de trabalho. Descrito logo abaixo.</p>
-                <div class="card-explicacao">
+                <!-- <p id="Fluxo">O Rankadmet é uma ferramenta de linha de comando, que pode ser usada como biblioteca também, que processa análises ADMET e gera planilhas que ranqueiam moléculas com base em seus scores. Possibilitando uma melhor visualização do resultado ADMET do que às disponíveis atualmente nos sites dessas análises. O programa é composto por módulos, e cada módulo serve para alguma etapa do fluxo de trabalho. Descrito logo abaixo.</p> -->
+                <!-- <div class="card-explicacao">
                     <h3>Fluxo Geral do Rankadmet</h3>
                     <p>O fluxo geral ronda em torno de:</p>
                     <div class="fluxo-grafico">
@@ -43,7 +43,7 @@
                             A planilha de scores é gerada a partir dos CSVs obtidos nas análises ADMET. O programa processa cada molécula, atribui scores e os classifica.  Tanto o SDF ou a planilha com a lista de moléculas gerada pelo programa, podem ser integrados ao processo para adicionar informações complementares.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <section class="container main-cards">
                     <a class="card-options" id="cmdCard">
                         <i class="fas fa-code"></i>
@@ -72,7 +72,7 @@
                         </nav>
                     </div>
                     <h2>Tutorial Linha de Comando</h2>
-                    <p id="Venv">O programa em seu formato de linha de comando possui 3 módulos, padrão, auto e adapt. O módulo Padrão permite controlar cada etapa do fluxo manualmente, o que dá certa flexibilidade no processo. O módulo Automático recebe o caminho de um único ou vários arquivos SDFs, além de receber também o caminho de uma única pasta contendo os arquivos SDF. A partir daí, o programa executa todas as etapas automaticamente. E o módulo Adapt é para converter planilhas de scores geradas em versões anteriores do programa para o formato da versão atual.</p>
+                    <!-- <p id="Venv">O programa em seu formato de linha de comando possui 3 módulos, padrão, auto e adapt. O módulo Padrão permite controlar cada etapa do fluxo manualmente, o que dá certa flexibilidade no processo. O módulo Automático recebe o caminho de um único ou vários arquivos SDFs, além de receber também o caminho de uma única pasta contendo os arquivos SDF. A partir daí, o programa executa todas as etapas automaticamente. E o módulo Adapt é para converter planilhas de scores geradas em versões anteriores do programa para o formato da versão atual.</p> -->
                     <!-- <div class="iframe-class">
                         <div class="consent-overlay">
                             <p>Este é um vídeo de tutorial de como usar o programa, ele está armazenado no Youtube, que utiliza cookies para coletar dados analíticos e de rastreamento de anúncios. Para assistir ao vídeo é necessário estar ciente disso e apertar em "Aceitar".</p>
@@ -82,26 +82,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="card-explicacao">
-                        <h3>Ativando Ambiente Virtual</h3>
-                        <p>É necessário ativar o ambiente virtual sempre que for utilizar o programa, já que, conforme o tutorial de instalação, ele foi instalado em uma venv (ambiente virtual). Você pode estar em qualquer pasta no terminal, basta fornecer o caminho onde a venv está localizada e ativá-la. O método de ativação varia de acordo com o sistema operacional.</p>
-                        <div class="card-explicacao-inner">
-                            <h3>Windows</h3>
-                            <p>No Windows, o comando para ativar a venv segue a estrutura abaixo:</p>
-                            <div class="library">
-                                <span class="reservada"> C:\Users\Nome\Pasta\rankadmet\venv\Scripts\activate</span>
-                            </div>
-                            <p>Basta inserir o caminho da pasta onde a venv está instalada e complementar com venv\Scripts\activate. Esse comando executa o script de ativação da venv, deixando o rankadmet pronto para uso.</p>                       
-                        </div>
-                        <div class="card-explicacao-inner">
-                            <h3>Linux</h3>
-                            <p>No Linux, o processo é semelhante, mas requer o uso do comando source antes do caminho de ativação. A estrutura do comando é a seguinte, o uso do comando source e o caminho para o venv/bin/activate:</p>
-                            <div class="library">
-                                <span class="reservada">source </span> /opt/rankadmet/venv/bin/activate
-                            </div>
-                        </div>
-                    </div>
-
+                   
                     <div class="card-explicacao">
                         <h3>Resumo de Comandos</h3>
                                   
@@ -110,11 +91,11 @@
                             <p>A ideia é preparar o arquivo SDF que o usuário possui para obter uma lista de SMILES, que servirá de entrada nos sites de predição ADMET, ou particionar um SDF com muitas moléculas em SDFs menores com uma quantidade definida de moléculas, também para servir de entrada nos sites de predição ADMET:</p>
                             <p>Para dividir o sdf em sdfs com 299 moléculas por arquivo, que é o padrão, basta usar o código abaixo</p>
                             <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">-i</span> moleculas.sdf
+                                <span class="reservada">rankadmet</span> <span class="comentario">--sdf </span> <span class="comentario">-i</span> moleculas.sdf
                             </div>
                             <p>Para alterar a quantidade de moléculas por sdf:</p>
                             <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">-i</span> moleculas.sdf <span class="comentario">-bs</span> 500
+                                <span class="reservada">rankadmet</span> <span class="comentario">--sdf </span> <span class="comentario">-i</span> moleculas.sdf <span class="comentario">-bs</span> 500
                             </div>
                             <p>O programa aceita que o caminho de entrada seja o caminho de uma pasta, mas é necessario indicar que é para analisar os arquivos csv:</p>
                             <div class="library">
@@ -126,19 +107,19 @@
                             <h3>Obtenção da Planilha de Scores</h3>
                             <p>Para obter a planilha de score basta ter o arquivo com a analise admet, vindo do admetlab3.0, swissadme ou Admet-Ai:</p>
                             <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">-i</span> predicao_admet.csv
+                                <span class="reservada">rankadmet</span> <span class="comentario">--csv </span> <span class="comentario">-i</span> predicao_admet.csv
                             </div>
                             <p>Para adicionar informações de id à planilha:</p>
                             <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">-i</span> predicao_admet.csv <span class="comentario">-a</span> arquivo.csv
+                                <span class="reservada">rankadmet</span> <span class="comentario">--csv </span> <span class="comentario">-i</span> predicao_admet.csv <span class="comentario">-a</span> arquivo.csv
                             </div>
                             <p>Ou também</p>
                             <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">-i</span> predicao_admet.csv <span class="comentario">-a</span> arquivo.sdf
+                                <span class="reservada">rankadmet</span> <span class="comentario">--csv </span> <span class="comentario">-i</span> predicao_admet.csv <span class="comentario">-a</span> arquivo.sdf
                             </div>
                             <p>Para modificar a quantidade de moléculas na planilha de melhores:</p>
                             <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">-i</span> predicao_admet.csv <span class="comentario">-a</span> arquivo.sdf <span class="comentario">-t</span> 10
+                                <span class="reservada">rankadmet</span> <span class="comentario">--csv </span> <span class="comentario">-i</span> predicao_admet.csv <span class="comentario">-a</span> arquivo.sdf <span class="comentario">-t</span> 10
                             </div>
                             <p>O programa aceita que o caminho de entrada seja o caminho de uma pasta, mas é necessario indicar que é para analisar os arquivos csv:</p>
                             <div class="library">
@@ -149,7 +130,7 @@
                     </div>
 
 
-                    <div class="card-explicacao">
+                    <!-- <div class="card-explicacao">
                         <h3>Módulo Padrão</h3>
                         <p>Para utilizar um módulo no programa é necessário informar o nome do programa seguido do nome do módulo. Por exemplo: "rankadmet auto -i arquivo.sdf" ou "rankadmet adapt -i arquivo.xlsx". Quando utilizamos apenas o nome do programa seguido dos parâmetros, sem especificar um módulo, estamos chamando o módulo padrão. Por exemplo: "rankadmet -i arquivo.sdf". Este módulo padrão possui três funcionalidades principais:</p>
                         <div class="card-explicacao-inner">
@@ -494,8 +475,8 @@
                                 <td colspan="2" class="check">Planilha de scores e um Planilha filtrada com melhores moléculas</td>
                             </tr>
                         </tbody>
-                    </table>
-                </div>
+                    </table> -->
+                <!-- </div> -->
             </div>
             <div id="lib">
                 <div class="sidebar">
