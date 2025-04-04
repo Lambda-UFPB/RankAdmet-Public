@@ -65,11 +65,11 @@
                             <div class="library">
                                 <span class="reservada">python</span> --version
                             </div>
-                            <p>Se não estiver instalado, baixe e instale diretamente com:</p>
+                            <p>Se não estiver instalado, baixe e instale:</p>
                             <div class="library">
                                 <span class="reservada">winget</span> install -e --id Python.Python.3
                             </div>
-                            <p>Certifique-se de que o PowerShell permite scripts:</p>
+                            <p>Ative a permissão de scripts no PowerShell:</p>
                             <div class="library">
                                 <span class="reservada">Set-ExecutionPolicy</span> Unrestricted
                             </div>
@@ -80,46 +80,43 @@
                         </div>
                         <div class="card-explicacao">
                             <h3>Criando Ambiente Virtual e Baixando o Programa</h3>
-                            <p>Recomenda-se criar a venv em uma pasta dedicada para seus projetos ou documentos. Navegue até o local desejado no terminal com o comando:</p>
+
+                            <P> Crie o ambiente virtual na pasta onde deseja instalar o rankadmet:</P>
                             <div class="library">
-                                <span class="reservada">cd</span> <em>&lt;caminho_da_pasta&gt;</em>
+                                <span class="reservada">cd</span> <em>&lt;pasta_rankadmet&gt;</em>
+                                <span class="reservada">python</span> -m venv .\rankadmet<br>
                             </div>
-                            <p>Em seguida, crie a venv com:</p>
-                            <div class="library">
-                                <span class="reservada">python</span> -m venv rankadmet<br>
-                            </div>
-                            <p>E ative o ambiente virtual com:</p>
+                            <p>E ative o ambiente virtual:</p>
                             <div class="library">
                                 <span class="reservada">.\rankadmet\Scripts\activate</span>
                             </div>
+
                             <p>Acesse <a href="https://github.com/Lambda-UFPB/bin/releases" target="_blank">esse repositório </a> no GitHub.  Na seção "release" clique na última versão do RankAdmet, então clique com o botão direito no arquivo <code>.whl</code> e copie o link. Em seguida, use o comando abaixo no terminal para baixar o arquivo:</p>
 
+                            <p></p>
+
                             <div class="library" id="Instalando">
-                                <span class="reservada">Invoke-WebRequest </span> <span class="comentario">-Uri</span> <em>&lt;link copiado&gt;</em> <span class="comentario">-OutFile</span> <em>&lt;Ultimo Caminho do link,ex: rankadmet-2.0.0-py3-none-any.whl &gt;</em>
+                                <span class="reservada">Invoke-WebRequest </span> <span class="comentario">-Uri</span> <em>&lt;link copiado&gt;</em> <span class="comentario">-OutFile</span> <em>&lt;Nome do arquivo&gt;</em>
                             </div>
 
                         </div>
                         <div class="card-explicacao">
                             <h3 >Instalando o RankAdmet</h3>
-                            <P>Instale o arquivo .whl com o comando:</P>
+                            <P>Instale o rankadmet(arquivo .whl) e verifique a versão:</P>
                             <div class="library">
-                                <span class="reservada">pip</span> install rankadmet<TAB>
-                                <p>(Ao digitar "rankadmet" pressione a tecla <kbd>Tab</kbd>)</p>
-                            </div>
-                            <P>Aguarde até a conclusão da instalação. Ela pode demorar um pouco.</P>
-                            <P>Verifique se a instalação foi bem-sucedida executando o comando:</p>
-                            <div class="library" id="DiaaDia">
+                                <span class="reservada">pip</span> install <em>&lt;Nome do arquivo&gt;</em><TAB><br>
                                 <spam class="reservada">rankadmet</spam> <span classe="comentario">--version</span>
                             </div>
+                           
                         </div>
                         <div class="card-explicacao">
                             <h3>Uso Diário</h3>
-                            <p>Para utilizar o programa se deve ativar o ambiente virtual dele. </p>
-                            <p>Ative a venv com:</p>
+                            <p>Vá para a pasta que está instalado o rankadmet e ative o ambiente virtual:</p>
                             <div class="library">
-                                <span class="reservada">&lt;caminho_da_pasta_da_venv&gt;\Scripts\activate</span>
+                                <span class="reservada">cd</span> <em>&lt;pasta_rankadmet&gt;</em><br>
+                                <span class="reservada">.\rankadmet\Scripts\activate</span>
                             </div>
-                            <p>Para desativar, use:</p>
+                            <p>Para desativar:</p>
                             <div class="library" id="Atualizando">
                                 <span class="reservada">deactivate</span>
                             </div>
@@ -169,7 +166,7 @@
                                 <a href="comoUsar.html?section=intro"><i class="fas fa-code"></i> Como Usar</a>
                                 <div class="sidebar-summary">
                                     <h4>Sumário</h4>
-                                    <a href="#Download"><i class="fas fa-download"></i> Download</a>
+                                    <!-- <a href="#Download"><i class="fas fa-download"></i> Download</a> -->
                                     <a href="#Dependencias"><i class="fas fa-box"></i> Dependências</a>
                                     <a href="#Ambiente"><i class="fas fa-folder"></i> Ambiente Virtual e Instalação</a>
                                     <a href="#Diario"><i class="fas fa-calendar-day"></i> Uso Diário</a>
@@ -177,70 +174,62 @@
                                 </div>
                             </nav>
                         </div>
-                        <div class="card-explicacao" >
+                        <!-- <div class="card-explicacao" >
                             <h3>Download do Rankadmet</h3>
                             <p>Acesse <a href="https://github.com/Lambda-UFPB/bin/releases" target="_blank">esse repositório </a> no GitHub.  Na seção "release" clique na última versão do RankAdmet, então clique com o botão direito no arquivo <code>.whl</code> e copie o link. Em seguida, use o comando abaixo no terminal para baixar o arquivo:</p>
                             <div class="library" id= "Dependencias">
                                 <span class="reservada">wget</span> <em>&lt;link copiado&gt;</em>
                             </div>
-                        </div>
+                        </div> -->
+
                         <div class="card-explicacao">
                             <h3>Instalando Dependências</h3>
                             <p>Atualize o gerenciador de pacotes <code>apt</code> com o comando abaixo:</p>
                             <div class="library">
-                                <span class="reservada">sudo</span> apt update -y<br>
-                                <span class="reservada">sudo</span> apt upgrade -y
+                                <span class="reservada">sudo</span> apt-get update<br>
+                                <span class="reservada">sudo</span> apt-get dist-upgrade -f
                             </div>
                             
-                            <p>Verifique se tem o Python instalado:</p>
+                            <p>Verifique se tem o Python instalado, caso não esteja instale:</p>
                             <div class="library">
-                                <span class="reservada">python3</span> <span class="comentario">--version</span>
+                                <span class="reservada">python3</span> <span class="comentario">--version</span><br>
+                                <span class="reservada">sudo</span> apt-get install python3 -f
+
                             </div>
-                            <p>Se não estiver instalado, instale com o comando:</p>
+                            <p>Verifique se o módulo <code>venv</code> está instalado, caso não, instale:</p>
                             <div class="library">
-                                <span class="reservada">sudo</span> apt install python3
-                            </div>
-                            <p>Verifique se o módulo <code>venv</code> está instalado:</p>
-                            <div class="library">
-                                <span class="reservada">python3</span> <span class="comentario">-m</span> venv <span class="comentario">--help</span>
-                            </div>
-                            <p>Se não estiver instalado, instale com o comando:</p>
-                            <div class="library" id="Ambiente">
-                                <span class="reservada">sudo</span> apt install python3-venv
+                                <span class="reservada">python3</span> <span class="comentario">-m</span> venv <span class="comentario">--help</span><br>
+                                <span class="reservada">sudo</span> apt-get install python3-venv -f
                             </div>
                         </div>
                         <div class="card-explicacao">
                             <h3>Criação da venv e Instalação do Programa</h3>
-                            <p>Crie a venv na pasta /opt/:</p>
+                            <p>Crie a venv "rankadmet" na pasta /opt/ e ative-a:</p>
                             <div class="library">
-                                <span class="reservada">sudo</span> python3 <span class="comentario">-m</span> venv /opt/rankadmet
-                            </div>
-                            <p>A ative a venv:</p>
-                            <div class="library">
+                                <span class="reservada">sudo</span> python3 <span class="comentario">-m</span> venv /opt/rankadmet <br>
                                 <span class="reservada">source </span> /opt/rankadmet/bin/activate
                             </div>
-                            <p>Com a venv ativada, instale o arquivo .whl com o comando:</p>
+
+                            <p>Acesse o <a href="https://github.com/Lambda-UFPB/bin/releases" target="_blank">repositório no GitHub</a> e copie o endereço do link da ultima versão do rankadmet (<code>arquivo .whl</code>)
+                                Use o comando abaixo fazer o download do arquivo:</p>
+                                <div class="library">
+                                    <span class="reservada">wget</span> <em>&lt;link copiado&gt;</em>
+                                </div>
+
+                            <p>Instale a ultima versão do rankadmet (<code>arquivo .whl</code>) e verfique a versão:</p>
                             <div class="library">
-                                <span class="reservada">sudo</span> /opt/rankadmet/bin/pip install rankadmet*
-                            </div>
-                            <p>Confira a instalação com:</p>
-                            <div class="library">
+                                <span class="reservada">sudo</span> /opt/rankadmet/bin/pip install rankadmet* <span class="comentario">--force-reinstall</span><br>
                                 <span class="reservada">rankadmet </span> <span class="comentario">--version</span>
-                            </div>
-                            <p>Ou apenas:</p>
-                            <div class="library" id="Diario">
-                                <span class="reservada">rankadmet </span>
                             </div>
                         </div>
                         
-                        
                         <div class="card-explicacao">
                             <h3>Uso Diário</h3>
-                            <p>Sempre ative o ambiente virtual antes de usar o programa. Use o comando abaixo:</p>
+                            <p>Ative o ambiente virtual do rankadmet e execute o programa.</p>
                             <div class="library">
                                 <span class="reservada">source</span> /opt/rankadmet/bin/activate
                             </div>
-                            <p>Quando terminar, desative o ambiente virtual com o comando:</p>
+                            <p>Ao terminar, desative o ambiente virtual:</p>
                             <div class="library" id="AtualizandoUbuntu">
                                 <span class="reservada">deactivate</span>
                             </div>
@@ -249,23 +238,24 @@
 
                         <div class="card-explicacao">
                             <h3>Atualizando</h3>
-                            <p>Para evitar conflitos, remova qualquer arquivo <code>.whl</code> existente no diretório atual com o comando:</p>
+                            <p>Para evitar conflitos, remova qualquer <code>arquivo .whl</code> existente no diretório atual:</p>
                             <div class="library">
                                 <span class="reservada">rm</span> *.whl
                             </div>
-                            <p>Em seguida, acesse o <a href="https://github.com/Lambda-UFPB/bin/releases" target="_blank">repositório no GitHub</a>. Na seção "release" clique na última versão do RankAdmet, então clique com o botão direito no arquivo <code>.whl</code> e copie o link. Use o comando abaixo para baixá-lo:</p>
+                            <p>Acesse o <a href="https://github.com/Lambda-UFPB/bin/releases" target="_blank">repositório no GitHub</a> e copie o endereço do link da ultima versão do rankadmet (<code>arquivo .whl</code>)
+                            Use o comando abaixo fazer o download do arquivo:</p>
                             <div class="library">
                                 <span class="reservada">wget</span> <em>&lt;link copiado&gt;</em>
                             </div>
-                            <p>Ative o ambiente virtual com:</p>
+                            <p>Ative o ambiente virtual:</p>
                             <div class="library">
                                 <span class="reservada">source</span> /opt/rankadmet/bin/activate
                             </div>
-                            <p>Instale o arquivo baixado com o comando:</p>
+                            <p>Instale o arquivo <code>arquivo .whl</code> da ultima versão do rankadmet:</p>
                             <div class="library">
                                 <span class="reservada">sudo</span> /opt/rankadmet/bin/pip install rankadmet* <span class="comentario">--force-reinstall</span>
                             </div>
-                            <p>Verifique a versão instalada com:</p>
+                            <p>Verifique a versão instalada:</p>
                             <div class="library">
                                 <span class="reservada">rankadmet</span> <span class="comentario">--version</span>
                             </div>
