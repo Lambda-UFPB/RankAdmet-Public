@@ -1,6 +1,5 @@
-# Repositório Público do LAMBDA
+# Repositório Público do RAnkAdmet
 
-Este repositório disponibiliza os arquivos de distribuição binária para instalação das ferramentas desenvolvidas pelo laboratório. Cada ferramenta conta com seu arquivo de instalação e respectivo manual de uso.
+Este repositório disponibiliza os arquivos binários para instalação do RAnkAdmet.
 
-## Ferramentas Disponíveis
-- Rankadmet: versão atual 2.0.1
+Acesse aqui o manual de instalação e utilização
