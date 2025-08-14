@@ -7,4 +7,4 @@ Acesse aqui o manual de instalação: https://lambda-ufpb.github.io/RankAdmet-Pu
 Acesse aqui o manual de uso: https://lambda-ufpb.github.io/RankAdmet-Public/comoUsar.html?section=cli
 
 > [!IMPORTANT]
-> **Para começar, siga o nosso [Tutorial de Instalação Completo &rarr;](tutorial.md)**
+> **Siga o tutorial de instalação [Tutorial de Instalação Completo &rarr;](Installation_tutorial.md)**
