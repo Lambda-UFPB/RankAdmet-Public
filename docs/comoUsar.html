@@ -84,55 +84,28 @@
                     </div> -->
                    
                     <div class="card-explicacao">
-                        <h3>Resumo de Comandos</h3>
-                                  
-                        <div class="card-explicacao-inner">
-                            <h3>Preparação de arquivo sdf</h3>
-                            <p>O objetivo é processar o arquivo SDF fornecido pelo usuário para gerar uma lista de SMILES, que pode ser utilizada como entrada em sites de predição ADMET. Além disso, é possível particionar um SDF contendo muitas moléculas em arquivos menores, com uma quantidade definida de moléculas, facilitando seu uso em ferramentas de predição ADMET.</p>
-                            <p>Para dividir o sdf em sdfs com 299 moléculas por arquivo, que é o padrão, basta usar o código abaixo</p>
-                            <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">--sdf </span> <span class="comentario">-i</span> moleculas.sdf
-                            </div>
-                            <p>Para alterar a quantidade de moléculas por sdf:</p>
-                            <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">--sdf </span> <span class="comentario">-i</span> moleculas.sdf <span class="comentario">-bs</span> 500
-                            </div>
-                            <p>O programa aceita que o caminho de entrada seja o caminho de uma pasta, mas é necessario indicar que é para analisar os arquivos csv:</p>
-                            <div class="library">
-                                <span class="reservada">rankadmet</span><span class="comentario"> --sdf</span> <span class="comentario">-i</span> ./pasta/ <span class="comentario">-bs</span> 500
-                            </div>
-                        </div>
+                       <h3>Resumo de Comandos</h3>
 
                         <div class="card-explicacao-inner">
-                            <h3>Obtenção da Planilha de Scores</h3>
-                            <p>Para obter a planilha de score basta ter o arquivo com a analise admet, vindo do admetlab3.0, swissadme ou Admet-Ai:</p>
+                            <h3>Gerar Planilha de Scores</h3>
+                            <p>Para gerar a planilha de scores, é necessário fornecer um arquivo nos formatos <code>.sdf</code>, <code>.smi</code> ou <code>.csv>:</p>
                             <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">--csv </span> <span class="comentario">-i</span> predicao_admet.csv
+                                <span class="reservada">rankadmet</span> <span class="comentario">-i</span> minimized_results.sdf
                             </div>
-                            <p>Para adicionar informações de id à planilha:</p>
+                            <p>Também é possível informar o caminho de uma pasta contendo os arquivos de entrada:</p>
                             <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">--csv </span> <span class="comentario">-i</span> predicao_admet.csv <span class="comentario">-a</span> arquivo.csv
-                            </div>
-                            <p>Ou também</p>
-                            <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">--csv </span> <span class="comentario">-i</span> predicao_admet.csv <span class="comentario">-a</span> arquivo.sdf
-                            </div>
-                            <p>Para modificar a quantidade de moléculas na planilha de melhores:</p>
-                            <div class="library">
-                                <span class="reservada">rankadmet</span> <span class="comentario">--csv </span> <span class="comentario">-i</span> predicao_admet.csv <span class="comentario">-a</span> arquivo.sdf <span class="comentario">-t</span> 10
-                            </div>
-                            <p>O programa aceita que o caminho de entrada seja o caminho de uma pasta, mas é necessario indicar que é para analisar os arquivos csv:</p>
-                            <div class="library">
-                                <span class="reservada">rankadmet</span><span class="comentario"> --csv</span> <span class="comentario">-i</span> ./pasta/ <span class="comentario">-a</span> arquivo.sdf <span class="comentario">-t</span> 10
-                            </div>
-                            <p>Para ajustar os pesos utilizados no cálculo, edite o arquivo .json que será gerado na pasta onde o RankAdmet está sendo executado.</p>
-                            <p>Se desejar recalcular uma planilha de scores com os novos pesos, utilize o seguinte comando:</p>
-                            <div class="library">
-                                <span class="reservada">rankadmet</span><span class="comentario"> -r</span> <span class="comentario">-i</span> rankadmet_admetlab.xlsx
+                                <span class="reservada">rankadmet</span><span class="comentario"> -i</span> ./pasta/
                             </div>
                         </div>
-
+                        
+                        <div class="card-explicacao-inner">
+                            <h3>Atualizar Planilha de Scores para a Nova Versão</h3>
+                            <p>Essa funcionalidade não está mais disponível diretamente no <code>rankadmet</code>, mas pode ser acessada por meio de um programa auxiliar chamado <code>lab2ai</code>:</p>
+                            <div class="library">
+                                <span class="reservada">lab2ai</span> <span class="comentario">-i</span> rankadmet_admetai.xlsx
+                            </div>
                     </div>
+
 
 
                     <!-- <div class="card-explicacao">
