@@ -1,4 +1,4 @@
-# Repositório Público do RAnkAdmet
+# Repositório Público do RankAdmet
 
 Este repositório disponibiliza os arquivos binários para instalação do RankAdmet.
 
