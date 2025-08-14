@@ -1,6 +1,6 @@
 # Repositório Público do RankAdmet
 
-Este repositório disponibiliza os arquivos binários para instalação do RankAdmet.
+Este repositório disponibiliza os arquivos binários para instalação do Rankadmet.
 
 Acesse aqui o manual de instalação: https://lambda-ufpb.github.io/RankAdmet-Public/
 
